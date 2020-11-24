@@ -4,8 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+        
     
+        <form name="reportForm" action="" onsubmit="return validateForm()" method="POST">
+            <div id="reportDiv">
+            <h1>Indberet fejl</h1>
+            <p>Venligst udfyld formularen for at indmelde en fejl.</p>
+            <hr>
+
+
+            <label for="subject"><b>Emne:</b></label>
+            <input type="text" placeholder="Indtast emne" name="subject" id="subject" required>
+            
+            <label for="malfunction"><b>Fejlmelding:</b></label>
+            <input type="text" placeholder="Beskriv fejlen" name="malfunction" id="malfunction" required>
+
+            <label for="location"><b>Lokation:</b></label>
+            <input type="text" placeholder="Indtast lokation" name="location" id="location" required>
+
+            <label for="other"><b>Andet:</b></label>
+            <input type="text" placeholder="Andet" name="other" id="other" required>
+
+            <br>
+            <h2>Kontaktoplysninger</h2>
+
+            <label for="name"><b>Navn:</b></label>
+            <input type="text" placeholder="Navn.." name="name" id="name" required>
+
+            <label for="phone"><b>Tlf. nr:</b></label>
+            <input type="text" placeholder="Tlf. nr." name="phone" id="phone" required>
+
+            
+
+            <br><input type="submit" value="Submit">
+            </div>
+        </form>
+    
+    <script src="./validateForm.js"></script>
 </body>
 </html>

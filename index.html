@@ -55,7 +55,15 @@
             <label for="phone"><b>Tlf. nr:</b></label>
             <input type="text" placeholder="Tlf. nr." name="phone" id="phone" >
             
-            <input type="file" accept="image/*" capture="camera" />
+            
+            <form method='post' action='' enctype="multipart/form-data">
+                <input type="file" id='files' name="files[]" multiple><br>
+                <input type="button" id="submitPhoto" value='Upload'>
+             
+                
+            </form>
+
+            <div id='preview'></div>
             
             <br><input type="submit" value="Submit" id="submit">
             </div>

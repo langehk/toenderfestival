@@ -1,4 +1,12 @@
-* {box-sizing: border-box}
+* {
+  box-sizing: border-box;
+  
+}
+
+
+body {
+  padding: 38px;
+}
 
 
 /* Add padding to containers */

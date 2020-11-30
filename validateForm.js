@@ -42,34 +42,14 @@ $(".dropdown-menu li a").click(function(){
  var upload = document.getElementById("files");
 
  
-
+// When files are uploaded, we select the uploaded files, and append the images.
 upload.onchange = (event) => {
   var preview = document.getElementById('preview');
 
   for (let i = 0; i < event.target.files.length; i++) {
-    debugger;
     var newImage = document.createElement("img");
     newImage.id = "upload-image" + i;
     newImage.src = URL.createObjectURL(event.target.files[i]);
     preview.appendChild(newImage);
-
-    //preview.src = URL.createObjectURL(event.target.files[i]);
   }
 }
-
-
-/*
- upload.addEventListener("loadeddata", loadFile);
-
-    function loadFile(event) {
-      debugger;
-      var preview = document.getElementById('preview');
-      
-      var files = document.getElementById('files').files;
-    
-      preview.src = URL.createObjectURL(files[0]);
-      
-    };
-
-    export {loadFile}
-    */

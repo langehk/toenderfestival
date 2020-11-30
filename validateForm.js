@@ -39,36 +39,37 @@ $(".dropdown-menu li a").click(function(){
   });
 
 
+ var upload = document.getElementById("files");
 
-  $(document).ready(function(){
+ 
 
-    $('#submitPhoto').click(function(){
+upload.onchange = (event) => {
+  var preview = document.getElementById('preview');
+
+  for (let i = 0; i < event.target.files.length; i++) {
+    debugger;
+    var newImage = document.createElement("img");
+    newImage.id = "upload-image" + i;
+    newImage.src = URL.createObjectURL(event.target.files[i]);
+    preview.appendChild(newImage);
+
+    //preview.src = URL.createObjectURL(event.target.files[i]);
+  }
+}
+
+
+/*
+ upload.addEventListener("loadeddata", loadFile);
+
+    function loadFile(event) {
+      debugger;
+      var preview = document.getElementById('preview');
+      
+      var files = document.getElementById('files').files;
     
-       var form_data = new FormData();
-    
-       // Read selected files
-       var totalfiles = document.getElementById('files').files.length;
-       for (var index = 0; index < totalfiles; index++) {
-          form_data.append("files[]", document.getElementById('files').files[index]);
-       }
-    
-       // AJAX request
-       $.ajax({
-         url: 'http://x15.dk/hitme.php', 
-         type: 'post',
-         data: form_data,
-         dataType: 'json',
-         contentType: false,
-         processData: false,
-         success: function (response) {
-    
-           for(var index = 0; index < response.length; index++) {
-             var src = response[index];
-    
-             // Add img element in <div id='preview'>
-             $('#preview').append('<img src="'+src+'" width="200px;" height="200px">');
-           }
-         }
-       });
-    });
-    });
+      preview.src = URL.createObjectURL(files[0]);
+      
+    };
+
+    export {loadFile}
+    */

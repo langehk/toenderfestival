@@ -16,12 +16,13 @@ function prettyBody(formElements){
 }
 
 
+
 // Gets the elements (input (form)), and gets the values from each element.
 // Then resurns the desired values. as an object.
 const formToJSON = elements => [].reduce.call(elements, (data, element) => {
 
   data[element.name] = element.value;
-
+  
   return data;
 }, {});
 
@@ -29,6 +30,8 @@ const formToJSON = elements => [].reduce.call(elements, (data, element) => {
 const handleFormSubmit = event => {
   event.preventDefault();
 
+  // Sætter en dato.
+    document.getElementById("timestamp").value = Date();
   const data = formToJSON(form.elements); // Converts values to json object.
 
   /*

@@ -20,8 +20,7 @@ body {
 #preview img {
   margin: 0;
   width: 45%;
-  border-style: dashed;
-  border-color: #838383;
+  margin-bottom: 20px;
 }
 
 #preview img:nth-child(odd){

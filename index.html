@@ -10,24 +10,26 @@
 </head>
 <body>
 
-        <form id="reportForm" name="reportForm" action="mailto:mort120c@basyd.dk" method="GET">
+        <form class="report_Form" id="reportForm" name="reportForm" action="mailto:mort120c@basyd.dk" method="GET">
             <div id="reportDiv">
             <h1>Indberet fejl</h1>
             <p>Venligst udfyld formularen for at indmelde en fejl.</p>
             <hr>
             
             <label for="subject"><b>Emne:</b></label>
-            <input type="text" placeholder="Indtast emne" name="subject" id="subject" >
+            <input class="report_Form" type="text" placeholder="Indtast emne" name="subject" id="subject" >
             
             <label for="malfunction"><b>Fejlmelding:</b></label>
-            <input type="text" placeholder="Beskriv fejlen" name="malfunction" id="malfunction" >
+            <input class="report_Form" type="text" placeholder="Beskriv fejlen" name="malfunction" id="malfunction" >
 
-            <label for="location"><b>Lokation:</b></label>
-            <input type="text" placeholder="Indtast lokation" name="location" id="location" >
+            <!-- 
+              <label for="location"><b>Lokation:</b></label>
+            <input  class="report_Form" type="text" placeholder="Indtast lokation" name="location" id="location" >
+            -->
 
 
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 300px;">
+                <button class="report_Form btn btn-secondary dropdown-toggle" name="location" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 300px;">
                   Lokation
                   <span class="caret"></span>
                 </button>
@@ -44,29 +46,32 @@
               </div>
 
             <label for="other"><b>Andet:</b></label>
-            <input type="text" placeholder="Andet" name="other" id="other" >
-
+            <input class="report_Form" type="text" placeholder="Andet" name="other" id="other" >
+            
             <br>
             <h2>Kontaktoplysninger</h2>
 
             <label for="name"><b>Navn:</b></label>
-            <input type="text" placeholder="Navn.." name="name" id="name" >
+            <input class="report_Form" type="text" placeholder="Navn.." name="name" id="name" >
 
             <label for="phone"><b>Tlf. nr:</b></label>
-            <input type="text" placeholder="Tlf. nr." name="phone" id="phone" >
+            <input class="report_Form" type="text" placeholder="Tlf. nr." name="phone" id="phone" >
             
             
             <form method='post' action='' enctype="multipart/form-data">
-                <input class="btn btn-secondary" type="file" id='files' name="files[]" multiple ><br>
+                <input class="report_Form" class="btn btn-secondary" type="file" id='files' name="files[]" multiple ><br>
               <p id="preview"></p>
              
             </form>
             <p><img id="preview" width="200" /></p>
             
-            <br><input class="btn btn-secondary" type="submit" value="Submit" id="submit">
+            <br><input class="report_Form" type="submit" value="Submit" id="submit">
             </div>
         </form>
     
+
+
+<p class="results_display" id="results_display"></p>
 
         <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

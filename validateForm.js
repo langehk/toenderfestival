@@ -2,8 +2,7 @@
 
 import {getLocation} from './getLocation.js';
 
-let submitButton = document.getElementById('submit'); 
-submitButton.addEventListener("click", validateForm); 
+
 
 function prettyBody(formElements){
 
@@ -21,7 +20,45 @@ function prettyBody(formElements){
 }
 
 
-// Validation
+
+
+// Gets the elements (input (form)), and gets the values from each element.
+// Then resurns the desired values.
+const formToJSON = elements => [].reduce.call(elements, (data, element) => {
+
+
+  data[element.name] = element.value;
+  
+  return data;
+}, {});
+
+
+
+const handleFormSubmit = event => {
+  debugger;
+  event.preventDefault();
+
+
+  const data = formToJSON(form.elements);
+
+  const dataContainer = document.getElementsByClassName('results_display')[0];
+
+  dataContainer.textContent = JSON.stringify(data, null, " ");
+
+  debugger;
+  
+}
+
+// Event listener on validate.
+let submitButton = document.getElementById('submit'); 
+//submitButton.addEventListener("click", validateForm); 
+
+const form = document.getElementsByClassName('report_Form')[0];
+submitButton.addEventListener("click", handleFormSubmit);
+
+
+
+// Validation - and get values from form.
 function validateForm(){
     let form = document.getElementById('reportForm').elements;
     let body = prettyBody(form);

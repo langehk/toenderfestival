@@ -23,37 +23,31 @@ function prettyBody(formElements){
 
 
 // Gets the elements (input (form)), and gets the values from each element.
-// Then resurns the desired values.
+// Then resurns the desired values. as an object.
 const formToJSON = elements => [].reduce.call(elements, (data, element) => {
 
 
   data[element.name] = element.value;
-  
+
   return data;
 }, {});
 
 
 
 const handleFormSubmit = event => {
-  debugger;
   event.preventDefault();
 
+  const data = formToJSON(form.elements); // Converts values to json object.
 
-  const data = formToJSON(form.elements);
-
-  const dataContainer = document.getElementsByClassName('results_display')[0];
+  const dataContainer = document.getElementsByClassName('results_display')[0]; // Container to display our values. 
 
   dataContainer.textContent = JSON.stringify(data, null, " ");
 
-  debugger;
-  
 }
 
-// Event listener on validate.
+// Event listener on submit.
 let submitButton = document.getElementById('submit'); 
-//submitButton.addEventListener("click", validateForm); 
-
-const form = document.getElementsByClassName('report_Form')[0];
+const form = document.getElementsByClassName('report_Form')[0]; // Henter alle "inputs" fra vores form.
 submitButton.addEventListener("click", handleFormSubmit);
 
 
@@ -66,7 +60,6 @@ function validateForm(){
     console.log(body);
     getLocation();
     window.open(`mailto:mort120c@basyd.dk?subject=${subject}&body=${body}`);
-    
 }
 
 // Dropdown function. Shows the selected item.

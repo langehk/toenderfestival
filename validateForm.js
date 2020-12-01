@@ -3,7 +3,6 @@
 import {getLocation} from './getLocation.js';
 
 
-
 function prettyBody(formElements){
 
     let text = ""; 
@@ -12,20 +11,14 @@ function prettyBody(formElements){
         //insert headline
         text += formElements[i].value;
         //text += document.write('<br>');
-  
-        //insert linebreak     
-        
     }
     return text; 
 }
 
 
-
-
 // Gets the elements (input (form)), and gets the values from each element.
 // Then resurns the desired values. as an object.
 const formToJSON = elements => [].reduce.call(elements, (data, element) => {
-
 
   data[element.name] = element.value;
 
@@ -33,12 +26,19 @@ const formToJSON = elements => [].reduce.call(elements, (data, element) => {
 }, {});
 
 
-
 const handleFormSubmit = event => {
   event.preventDefault();
 
   const data = formToJSON(form.elements); // Converts values to json object.
 
+  /*
+fs.writeFile('report.json', data, (err) => {
+  if(err){
+    throw err;
+  }
+  console.log("json data saved!");
+});
+*/
   const dataContainer = document.getElementsByClassName('results_display')[0]; // Container to display our values. 
 
   dataContainer.textContent = JSON.stringify(data, null, " ");

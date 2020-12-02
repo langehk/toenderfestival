@@ -29,7 +29,7 @@
             <input  class="report_Form" type="text" placeholder="Indtast lokation" name="location" id="location" >
             -->
 
-
+            <!--
             <div class="dropdown">
                 <button class="report_Form btn btn-secondary dropdown-toggle" name="location" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 300px;">
                   Lokation
@@ -46,6 +46,22 @@
                 </ul>
                 </div>
               </div>
+              -->
+
+              <div>
+                <label for="suggestions"><b>Lokation:</b></label>
+                <br>
+                <datalist class="report_Form" id="suggestions">
+                    <option>Plads 1</option>
+                    <option>Plads 2</option>
+                    <option>Toilet</option>
+                    <option>Scene 1</option>
+                    <option>Plads 36</option>
+                    <option>Plads 56</option>
+                </datalist>
+                <input placeholder="Vælg lokation" autoComplete="on" name="location" list="suggestions"/> 
+            </div>
+            <br>
 
             <label for="other"><b>Andet:</b></label>
             <input class="report_Form" type="text" placeholder="Andet" name="other" id="other" >

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="./validateForm.js" type="module"></script>
+</head>
+<body>
+        <form class="report_Form" id="reportForm" name="reportForm" action="mailto:mort120c@basyd.dk" method="GET">
+            <div id="reportDiv">
+
+            <h1 class="headline">Meld fejl</h1>
+            <input class="report_Form" type="text" placeholder="Navn" name="name" id="name" >
+
+            <input class="report_Form" type="text" placeholder="Telefonnummer" name="phone" id="phone" >
+            <br>
+            <input class="report_Form" type="text" name="timestamp" id="timestamp" hidden="true"></input>
+            <hr>
+
+            <input class="report_Form" type="text" placeholder="Indtast emne" name="subject" id="subject" >
+          
+            <div>
+              <datalist class="report_Form" id="suggestions">
+                  <option>Plads 1</option>
+                  <option>Plads 2</option>
+                  <option>Toilet</option>
+                  <option>Scene 1</option>
+                  <option>Plads 36</option>
+                  <option>Plads 56</option>
+              </datalist>
+              <input placeholder="Vælg lokation" autoComplete="on" name="location" list="suggestions" onfocus="this.value=''"/> 
+          </div>
+          <br>
+            <input class="report_Form" type="text" placeholder="Beskriv fejlen" name="malfunction" id="malfunction" >
+            <br>           
+            <form method='post' action='' enctype="multipart/form-data">
+                
+                <input class="report_Form" style="display:none;" class="btn btn-secondary" type="file" id='files' name="files[]" multiple >
+                <label class="button img"for="files">knap</label><br>
+              <p id="preview"></p>
+            </form>
+            <p><img id="preview" width="200" /></p>
+            
+            <input class="report_Form" type="submit" value="Submit" id="submit">
+            </div>
+        </form>
+
+<p class="results_display" id="results_display"></p>
+
+        <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+           
+</body>
+</html>

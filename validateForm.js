@@ -19,19 +19,22 @@ function prettyBody(formElements){
 
 // Gets the elements (input (form)), and gets the values from each element.
 // Then returns the desired values. as an object.
-const formToJSON = elements => [].reduce.call(elements, (data, element) => { //reduce gør arrayet til en værdi 
-
-  data[element.name] = element.value;
-  
+const formToJSON = function(form) {
+  let data = {};
+  for (let i = 0; i < form.length; i++) {
+    let item = form[i];
+    data[item.name] = item.value;
+  }
   return data;
-}, {});
+}
 
 
-const handleFormSubmit = event => {
-  event.preventDefault();
+const handleFormSubmit = function(event) {
+  const form = document.getElementsByClassName('report_Form')[0]; // Henter alle "inputs" fra vores form.
+  //event.preventDefault();
 
   // Sætter en dato.
-    document.getElementById("timestamp").value = Date();
+  document.getElementById("timestamp").value = Date();
   const data = formToJSON(form.elements); // Converts values to json object.
 
 
@@ -43,7 +46,6 @@ const handleFormSubmit = event => {
 
 // Event listener on submit.
 let submitButton = document.getElementById('submit'); 
-const form = document.getElementsByClassName('report_Form')[0]; // Henter alle "inputs" fra vores form.
 submitButton.addEventListener("click", handleFormSubmit);
 
 

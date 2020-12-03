@@ -9,19 +9,20 @@
     <script src="./validateForm.js" type="module"></script>
 </head>
 <body>
-        <form class="report_Form" id="reportForm" name="reportForm" action="mailto:mort120c@basyd.dk" method="GET">
+        <form class="report_Form" id="reportForm" name="reportForm" action="./confirmation.html" method="GET">
             <div id="reportDiv">
 
             <h1 class="headline">Meld fejl</h1>
-            <input class="report_Form" type="text" placeholder="Navn" name="name" id="name" >
+            <input class="report_Form" type="text" placeholder="Navn" name="name" id="name" required>
 
-            <input class="report_Form" type="text" placeholder="Telefonnummer" name="phone" id="phone" >
+            <input class="report_Form" type="text" placeholder="Telefonnummer" name="phone" id="phone" required >
             <br>
             <input class="report_Form" type="text" name="timestamp" id="timestamp" hidden="true"></input>
             <hr>
 
-            <input class="report_Form" type="text" placeholder="Indtast emne" name="subject" id="subject" >
+            <input class="report_Form" type="text" placeholder="Indtast emne" name="subject" id="subject" required>
           
+              
             <div>
               <datalist class="report_Form" id="suggestions">
                   <option>Plads 1</option>
@@ -31,10 +32,10 @@
                   <option>Plads 36</option>
                   <option>Plads 56</option>
               </datalist>
-              <input placeholder="Vælg lokation" autoComplete="on" name="location" list="suggestions" onfocus="this.value=''"/> 
+              <input placeholder="Vælg lokation" autoComplete="on" name="location" list="suggestions" onfocus="this.value=''" required/> 
           </div>
           <br>
-            <input class="report_Form" type="text" placeholder="Beskriv fejlen" name="malfunction" id="malfunction" >
+            <input class="report_Form" type="text" placeholder="Beskriv fejlen" name="malfunction" id="malfunction" required >
             <br>           
             <form method='post' action='' enctype="multipart/form-data">
                 
@@ -44,7 +45,7 @@
             </form>
             <p><img id="preview" width="200" /></p>
             
-            <input class="report_Form" type="submit" value="Submit" id="submit">
+            <input type="submit" value="Send" id="submit">
             </div>
         </form>
 

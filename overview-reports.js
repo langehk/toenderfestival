@@ -51,10 +51,10 @@ console.log(uuidv4());
 const createReports = function(arr){
     for (let i = 0; i < arr.length; i++) {
         
-        let reportDiv = document.createElement("div");
-        let subject = document.createElement("p");
-        subject.innerHTML = arr[i].subject; 
-        reportDiv.appendChild(subject); 
+        let reportDiv = document.createElement("div"); //div element for every report
+        let subject = document.createElement("p"); //create p element
+        subject.innerHTML = arr[i].subject; //subject value from object
+        reportDiv.appendChild(subject); //append to div element
 
         let date = document.createElement("p"); 
         date.innerHTML = arr[i].date; 
@@ -64,8 +64,8 @@ const createReports = function(arr){
         time.innerHTML = arr[i].time; 
         reportDiv.appendChild(time); 
 
-        let headlineDescription = document.createElement("h3"); 
-        headlineDescription.innerHTML = headlines.description; 
+        let headlineDescription = document.createElement("h3"); //we need a headline 
+        headlineDescription.innerHTML = headlines.description; //get headline from our headline-array
         reportDiv.appendChild(headlineDescription);
 
         let description = document.createElement("p");

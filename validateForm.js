@@ -34,14 +34,7 @@ const handleFormSubmit = event => {
     document.getElementById("timestamp").value = Date();
   const data = formToJSON(form.elements); // Converts values to json object.
 
-  /*
-fs.writeFile('report.json', data, (err) => {
-  if(err){
-    throw err;
-  }
-  console.log("json data saved!");
-});
-*/
+  
   const dataContainer = document.getElementsByClassName('results_display')[0]; // Container to display our values. 
 
   dataContainer.textContent = JSON.stringify(data, null, " ");

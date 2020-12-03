@@ -9,60 +9,45 @@
     <script src="./validateForm.js" type="module"></script>
 </head>
 <body>
-
         <form class="report_Form" id="reportForm" name="reportForm" action="mailto:mort120c@basyd.dk" method="GET">
             <div id="reportDiv">
-            <h1>Indberet fejl</h1>
-            <p>Venligst udfyld formularen for at indmelde en fejl.</p>
+
+            <h1 class="headline">Meld fejl</h1>
+            <input class="report_Form" type="text" placeholder="Navn" name="name" id="name" >
+
+            <input class="report_Form" type="text" placeholder="Telefonnummer" name="phone" id="phone" >
+            <br>
             <input class="report_Form" type="text" name="timestamp" id="timestamp" hidden="true"></input>
             <hr>
-            
-            <label for="subject"><b>Emne:</b></label>
+
             <input class="report_Form" type="text" placeholder="Indtast emne" name="subject" id="subject" >
-            
-            <label for="malfunction"><b>Fejlmelding:</b></label>
+          
+            <div>
+              <br>
+              <datalist class="report_Form" id="suggestions">
+                  <option>Plads 1</option>
+                  <option>Plads 2</option>
+                  <option>Toilet</option>
+                  <option>Scene 1</option>
+                  <option>Plads 36</option>
+                  <option>Plads 56</option>
+              </datalist>
+              <input placeholder="Vælg lokation" autoComplete="on" name="location" list="suggestions" onfocus="this.value=''"/> 
+          </div>
+          <br>
             <input class="report_Form" type="text" placeholder="Beskriv fejlen" name="malfunction" id="malfunction" >
-
-              <div>
-                <label for="suggestions"><b>Lokation:</b></label>
-                <br>
-                <datalist class="report_Form" id="suggestions">
-                    <option>Plads 1</option>
-                    <option>Plads 2</option>
-                    <option>Toilet</option>
-                    <option>Scene 1</option>
-                    <option>Plads 36</option>
-                    <option>Plads 56</option>
-                </datalist>
-                <input placeholder="Vælg lokation" autoComplete="on" name="location" list="suggestions" onfocus="this.value=''"/> 
-            </div>
-            <br>
-
-            <label for="other"><b>Andet:</b></label>
-            <input class="report_Form" type="text" placeholder="Andet" name="other" id="other" >
-            
-            <br>
-            <h2>Kontaktoplysninger</h2>
-
-            <label for="name"><b>Navn:</b></label>
-            <input class="report_Form" type="text" placeholder="Navn.." name="name" id="name" >
-
-            <label for="phone"><b>Tlf. nr:</b></label>
-            <input class="report_Form" type="text" placeholder="Tlf. nr." name="phone" id="phone" >
-            
-            
+            <br>           
             <form method='post' action='' enctype="multipart/form-data">
-                <input class="report_Form" class="btn btn-secondary" type="file" id='files' name="files[]" multiple ><br>
+                
+                <input class="report_Form" style="display:none;" class="btn btn-secondary" type="file" id='files' name="files[]" multiple >
+                <label class="button img"for="files">knap</label><br>
               <p id="preview"></p>
-             
             </form>
             <p><img id="preview" width="200" /></p>
             
-            <br><input class="report_Form" type="submit" value="Submit" id="submit">
+            <input class="report_Form" type="submit" value="Submit" id="submit">
             </div>
         </form>
-    
-
 
 <p class="results_display" id="results_display"></p>
 

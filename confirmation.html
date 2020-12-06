@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/loa3imd.css">
+    <link rel="stylesheet" href="./style.css">
     <title>Fejl sendt ind</title>
 </head>
+
 <body>
-    
-    <div>
-        <img src="./img/toenderFestival.svg" alt="logo-toenderFestival">
-        <hr>
-    </div>
+    <main>
+        <div id="logo">
+            <img id="confirmationLogo" src="./img/toenderFestival.svg" alt="homeLogo">
+            <hr>
+        </div>
 
-    <div>
-        <h1 class="confirmation-report-sent">Tak for din fejlmelding</h1>
-
-        <h3 class="confirmation-text">Vi sender hjælp hurtigst muligt.</h3>
-    </div>
-    
+        <div id="text">
+            <h1 class="confirmation-report-sent">Tak for din fejlmelding</h1>
+            <h3 class="confirmation-text">Vi sender hjælp hurtigst muligt.</h3>
+        </div>
+    </main>
 
     <footer id="footer">
-        <div class="navBar">
-            <button id="home-button"></button>
-            <button id="report-button"></button>
-            <button id="az-button"></button>
-            <button id="overview-button"></button>
+        <div onclick="window.location.href='./index.html'">
+            <img src="./img/homeStroke.svg" alt="homeFill" class="footerImg">
+        </div>
+        <div onclick="window.location.href='#'">
+            <img src="./img/reportFill.svg" alt="reportStroke" class="footerImg">
+        </div>
+        <div onclick="window.location.href='./azguide.html'">
+            <img src="./img/AZguideStroke.svg" alt="AZguideStroke" class="footerImg">
+        </div>
+        <div onclick="window.location.href='./overview-reports.html'">
+            <img src="./img/overviewStroke.svg" alt="overviewStroke" class="footerImg">
         </div>
 
     </footer>
 </body>
+
 </html>

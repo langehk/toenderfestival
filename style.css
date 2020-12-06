@@ -118,6 +118,7 @@ margin: 0 auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 90px;
 }
 
 #reportDiv h1 {
@@ -147,7 +148,9 @@ margin: 0 auto;
   padding: 15px;
 }
 
-.button.img {
+.button.img, #submit {
+  font-size: 35px;
+  border: none;
   position: relative;
   color: white;
   text-align: center;

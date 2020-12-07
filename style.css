@@ -59,6 +59,28 @@ body {
   background-position: bottom;
 }
 
+#confirmationMain {
+  padding: 38px 0;
+  width: 100%;
+  height: 100vh;
+  background: rgb(240,224,193);
+  background: linear-gradient(180deg, rgba(240,224,193,1) 0%, rgba(240,224,193,1) 50%, rgba(240,224,193,0) 100%);
+}
+
+#confirmationMain::before {
+  content: "";
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: -100;
+  top:0;
+  left: 0;
+  background-image: url("./img/confirmationBG.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
 
 
 #indexMain div{

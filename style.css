@@ -153,6 +153,10 @@ margin: 0 auto;
   padding: 15px;
 }
 
+.button.img {
+  margin: 0;
+}
+
 .button.img, #submit {
   font-size: 35px;
   border: none;
@@ -182,14 +186,13 @@ margin: 0 auto;
 
 #preview {
   width: 100%;
-  margin-top: 20px;
 
 }
 
 #preview img {
   margin: 0;
   width: 45%;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 #preview img:nth-child(odd){

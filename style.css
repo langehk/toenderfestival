@@ -3,6 +3,15 @@
 
 }
 
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: "";
+}
+
 ul {
   list-style-type: none;
   margin: 0;

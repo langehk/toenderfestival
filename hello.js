@@ -12,10 +12,7 @@ app.set('view engine', 'php');
 app.engine('php', php.__express);
 
 app.get("/", function (req, res) {
-  res.render('test.php', {
-    _REGISTER_GLOBAL_MODEL: false,
-    hello: 'world'
-})
+  res.send("Hello World!");
 });
 
 app.listen(app.get("port"), function () {

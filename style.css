@@ -11,9 +11,21 @@
   display: "";
 }
 
-.visible::before {
+#filter-button {
+  font-size: 20px;
+  position: relative;
+  padding-left: 17px;
+}
+
+#filter-button::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -6px;
   content: "";
-  background-image: ;
+  background-image: url("./img/X.svg");
+  height: 12px;
+  width: 12px;
 }
 
 ul {

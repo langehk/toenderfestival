@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-
 }
 
 
@@ -10,6 +9,11 @@
 
 .visible {
   display: "";
+}
+
+.visible::before {
+  content: "";
+  background-image: ;
 }
 
 ul {

@@ -1,6 +1,19 @@
 * {
   box-sizing: border-box;
+}
 
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: "";
+}
+
+.visible::before {
+  content: "";
+  background-image: ;
 }
 
 ul {

@@ -26,7 +26,6 @@ const filterQueryStatus = function(arr){
     //let filterStatus = document.getElementsByClassName('items').value;
     //console.log(filterStatus);
 
-    var checkedValue = null; 
     var inputElements = document.getElementsByClassName('checkbox');
     debugger;
     let chosenReports = [];
@@ -54,56 +53,6 @@ const filterQueryStatus = function(arr){
         
     }
 
-/*
-
-const filterQueryStatus = function(arr){
-
-    //let filterStatus = document.getElementsByClassName('items').value;
-    //console.log(filterStatus);
-
-    var checkedValue = null; 
-    var inputElements = document.getElementsByClassName('checkbox');
-    debugger;
-
-    for (let i = 0; i < inputElements.length; i++) { //For-loop gennem checkboxes
-
-        if(inputElements[i].checked){
-            for (let y = 0; y < arr.length; y++) { // For-loop gennem reports
-                debugger;
-                let divShow = document.getElementById(arr[y].id);
-
-                if(inputElements[i].value != arr[y].status){
-                    divShow.style.display = "none"; 
-                }
-                else{
-                    divShow.style.display = ""; 
-                }
-            }
-        }
-
-        
-    }
-*/
-   
-/*
-    for(var i=0; inputElements[i]; ++i){
-          if(inputElements[i].checked){   
-              for (let y = 0; y < arr.length; y++) {
-            
-                let divShow = document.getElementById(arr[y].id);
-                if(inputElements[i].value = arr[y].status){
-                    divShow.style.display = "";  
-                }
-                 
-              }            
-          }
-
-          else{
-
-            
-        }
-    }*/
-
 }
 
 locationSearch.addEventListener('change', function(){
@@ -117,6 +66,30 @@ for (let i = 0; i < statusSearch.length; i++) { //eventlisterner på alle checkb
     });
     
 }
+
+let filterButton = document.getElementById('filter-button');
+let divFilter = document.getElementById('filterContainer');
+
+
+
+const toggleFilter = function(){
+
+    if (divFilter.className == 'hidden') {
+
+        divFilter.setAttribute("class", "visible");
+    }
+    else {
+
+        divFilter.setAttribute("class", "hidden");
+    }
+
+}
+
+filterButton.addEventListener('click', toggleFilter);
+
+
+
+
 
 
 

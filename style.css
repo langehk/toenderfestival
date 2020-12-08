@@ -213,7 +213,7 @@ margin: 0 auto;
   margin: 0;
 }
 
-.button.img, #submit {
+.button.img, #formSubmit {
   font-size: 35px;
   border: none;
   position: relative;

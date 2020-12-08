@@ -2,6 +2,7 @@
 
 import {getLocation} from './getLocation.js';
 
+/*
 
 function prettyBody(formElements){
 
@@ -13,10 +14,10 @@ function prettyBody(formElements){
         //text += document.write('<br>');
     }
     return text; 
-}
+}*/
 
 
-
+/*
 // Gets the elements (input (form)), and gets the values from each element.
 // Then returns the desired values. as an object.
 const formToJSON = function(form) {
@@ -26,11 +27,11 @@ const formToJSON = function(form) {
     data[item.name] = item.value;
   }
   return data;
-}
+}*/
 
 
 const handleFormSubmit = function(event) {
-  const form = document.getElementsByClassName('report_Form')[0]; // Henter alle "inputs" fra vores form.
+  /*const form = document.getElementsByClassName('report_Form')[0]; // Henter alle "inputs" fra vores form.
   //event.preventDefault();
 
   // Sætter en dato.
@@ -40,7 +41,7 @@ const handleFormSubmit = function(event) {
 
   const dataContainer = document.getElementsByClassName('results_display')[0]; // Container to display our values. 
 
-  dataContainer.textContent = JSON.stringify(data, null, " ");
+  dataContainer.textContent = JSON.stringify(data, null, " ");*/
 
 }
 
@@ -48,7 +49,7 @@ const handleFormSubmit = function(event) {
 let submitButton = document.getElementById('formSubmit'); 
 submitButton.addEventListener("click", handleFormSubmit);
 
-
+/*
 
 // Validation - and get values from form.
 function validateForm(){
@@ -58,7 +59,7 @@ function validateForm(){
     console.log(body);
     getLocation();
     window.open(`mailto:mort120c@basyd.dk?subject=${subject}&body=${body}`);
-}
+}*/
 
 /*
 // Dropdown function. Shows the selected item.

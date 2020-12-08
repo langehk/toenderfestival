@@ -48,17 +48,23 @@
     </main>
 
     <!-- Henter data fra Niels' .php script/json fil.-->
-    <script>
+    <script type="module">
+        import {reports} from './overview-reports.js';
+        import {Report} from './overview-reports.js';
+
         const readIncidents = function () {
-            debugger;
             // læs m ajax
             let oReq = new XMLHttpRequest();
             oReq.addEventListener("load", function () {
                 let incidents = [];
                 if (this.responseText.length > 0)
                     incidents = JSON.parse(this.responseText); // get and objectify
-                for (incident of incidents) {
-                    console.log(`${incident.name}, ${incident.phone}`);
+                for (let incident of incidents) {
+
+                    reports.push(new Report(`${incident.name}, ${incident.phone}, ${incident.subject}, ${incident.malfunction}, "Ikke påbegyndt", "25-08-2019", "13:48", "", ${incident.location}}`));
+                    //myvar.push(incident.name);
+                    //console.log(`${incident.name}, ${incident.phone}`);
+                    console.log(reports);
                 }
             });
             oReq.open("GET", "http://www.dkexit.eu/tf/getIncidents.php");

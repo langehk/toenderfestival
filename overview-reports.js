@@ -79,7 +79,7 @@ const createReports = function (arr) {
         container.appendChild(reportDiv);
     }
 }
-
+debugger;
 createReports(reports); //create all reports
 
-export {reports};
+export {reports, Report};

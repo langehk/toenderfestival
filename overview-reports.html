@@ -20,14 +20,15 @@
 
         <input type="search" id="reports-search" name="reports-search">
 
-        <p id="filter-button">Filter</p>
+        <p id="filter-button" class="hideX">Filter</p>
         <div id="filterContainer" class="hidden">
-            <div id="statusFilter">
+            <div id="statusButton">Status</div>
+            <div id="statusFilter" class="hidden">
                 <span class="anchor">Vælg status</span>
                 <ul class="items">
-                    <li><input class="checkbox" type="checkbox" value="Færdiggjort" checked/>Færdiggjort</li>
-                    <li><input class="checkbox" type="checkbox" value="Igangværende" checked/>Igangværende</li>
-                    <li><input class="checkbox" type="checkbox" value="Ikke påbegyndt" checked/>Ikke påbegyndt</li>
+                    <li><input class="checkbox" type="checkbox" value="Færdiggjort" checked />Færdiggjort</li>
+                    <li><input class="checkbox" type="checkbox" value="Igangværende" checked />Igangværende</li>
+                    <li><input class="checkbox" type="checkbox" value="Ikke påbegyndt" checked />Ikke påbegyndt</li>
                 </ul>
             </div>
             <div id="locationFilter">
@@ -36,10 +37,11 @@
                     <option>Plads 2</option>
                     <option>Toilet</option>
                     <option>Scene 1</option>
-                    <option>Plads 36</option>
+                    <option>Plads 105</option>
                     <option>Plads 56</option>
                 </datalist>
-                <input id="locationSearch" placeholder="Søg lokation..." autoComplete="on" name="location" list="suggestions" onfocus="this.value=''" required />
+                <input id="locationSearch" placeholder="Søg lokation..." autoComplete="on" name="location"
+                    list="suggestions" onfocus="this.value=''" required />
             </div>
         </div>
 

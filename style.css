@@ -16,9 +16,12 @@
   position: relative;
   padding-left: 17px;
 }
-
-#filter-button::before {
+.hideX::before {
+  display: none;
+}
+.showX::before {
   position: absolute;
+  display: block;
   left: 0;
   top: 50%;
   margin-top: -6px;
@@ -301,6 +304,20 @@ hr {
   margin-top: 0;
 }
 
+#reports-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#reports-container div {
+  margin-bottom: 20px;
+  width: 300px;
+  background-color: white;
+
+}
 
 #footer {
   background-color: #041B36;

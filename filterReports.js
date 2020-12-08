@@ -5,6 +5,21 @@ import {reports} from './overview-reports.js';
 let locationSearch = document.getElementById('locationSearch');
 let statusSearch = document.getElementsByClassName('checkbox');
 
+let filterButton = document.getElementById('filter-button');
+let divFilter = document.getElementById('filterContainer');
+
+let statusButton = document.getElementById('statusButton');
+let statusFilter = document.getElementById('statusFilter');
+
+
+//let filterX = document.querySelector((`#filter-button`), ':before');
+
+
+let filterX = window.getComputedStyle(document.querySelector(`#filter-button`), ':before').getPropertyValue('display');
+console.log(filterX);
+
+
+
 const filterQueryLocation = function (arr) {
 
     let filterLocation = document.getElementById('locationSearch').value;
@@ -49,8 +64,6 @@ const filterQueryStatus = function(arr){
             let divShow = document.getElementById(chosenReports[r].id);
             divShow.style.display = "";             
         }
-
-        
     }
 
 }
@@ -59,7 +72,7 @@ locationSearch.addEventListener('change', function(){
     filterQueryLocation(reports);
 });
 
-for (let i = 0; i < statusSearch.length; i++) { //eventlisterner på alle checkboxes
+for (let i = 0; i < statusSearch.length; i++) { //eventlistener på alle checkboxes
 
     statusSearch[i].addEventListener('click', function(){
         filterQueryStatus(reports);
@@ -67,25 +80,38 @@ for (let i = 0; i < statusSearch.length; i++) { //eventlisterner på alle checkb
     
 }
 
-let filterButton = document.getElementById('filter-button');
-let divFilter = document.getElementById('filterContainer');
 
+const toggleStatus = function(){
+    if (statusFilter.className == 'hidden') {
 
+        statusFilter.setAttribute("class", "visible");
+    }
+    else {
+
+        statusFilter.setAttribute("class", "hidden");
+        
+    }
+}
 
 const toggleFilter = function(){
 
     if (divFilter.className == 'hidden') {
 
         divFilter.setAttribute("class", "visible");
+        filterButton.setAttribute("class", "showX");
     }
     else {
 
         divFilter.setAttribute("class", "hidden");
+        filterButton.setAttribute("class", "hideX");
+        
     }
 
 }
 
-filterButton.addEventListener('click', toggleFilter);
+filterButton.addEventListener('click', toggleFilter); //eventlistener på filter-knappen
+
+statusButton.addEventListener('click', toggleStatus);
 
 
 

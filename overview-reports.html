@@ -60,6 +60,7 @@
                 if (this.responseText.length > 0)
                     incidents = JSON.parse(this.responseText); // get and objectify
                 for (incident of incidents) {
+                    // TODO
                     console.log(`${incident.name}, ${incident.phone}`);
                 }
             });

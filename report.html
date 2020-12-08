@@ -24,9 +24,19 @@
               debugger;
               let n = $('name').value;
               let p = $('phone').value;
+              let t = $('timestamp').value;
+              let s = $('subject').value;
+              let l = $('location').value;
+              let m = $('malfunction').value;
+
               let o = {
                   name: n,
-                  phone: p
+                  phone: p,
+                  timestamp: t,
+                  subject: s, 
+                  location: l,
+                  malfunction: m
+
               };
               hentet.push(o);                             // add new
               $('json').value = JSON.stringify(hentet);   // stringify
@@ -76,7 +86,7 @@
               <option>Plads 36</option>
               <option>Plads 56</option>
             </datalist>
-            <input placeholder="Vælg lokation" autoComplete="on" name="location" list="suggestions" onfocus="this.value=''" required />
+            <input placeholder="Vælg lokation" autoComplete="on" name="location" id="location" list="suggestions" onfocus="this.value=''" required />
           </div>
           <input class="report_Form" type="text" placeholder="Beskriv fejlen" name="malfunction" id="malfunction" required>
           <br>

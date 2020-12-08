@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./overview-reports.js" type="module"></script>
     <script src="./filterReports.js" type="module"></script>
+    <script src='./newQ.js'></script>
     <link rel="stylesheet" href="https://use.typekit.net/loa3imd.css">
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
@@ -45,6 +46,34 @@
 
         <div id="reports-container"></div>
     </main>
+
+    <!-- Henter data fra Niels' .php script/json fil.-->
+    <script>
+        const readIncidents = function () {
+            // læs m ajax
+            let oReq = new XMLHttpRequest();
+            oReq.addEventListener("load", function () {
+                let incidents = [];
+                if (this.responseText.length > 0)
+                    incidents = JSON.parse(this.responseText); // get and objectify
+                for (incident of incidents) {
+                    console.log(`${incident.name}, ${incident.birthday}`);
+                }
+            });
+            oReq.open("GET", "http://www.dkexit.eu/tf/getIncidents.php");
+            debugger;
+            oReq.send();
+        };
+        const doThis = function () {
+            headAndShoulders('ExamProject Dec 2020');
+            feet(2020);
+            readIncidents();
+        };
+        window.addEventListener('load', doThis);
+    </script>
+
+
+
 
     <footer id="footer">
         <div onclick="window.location.href='./index.html'">

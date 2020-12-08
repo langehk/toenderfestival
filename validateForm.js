@@ -45,7 +45,7 @@ const handleFormSubmit = function(event) {
 }
 
 // Event listener on submit.
-let submitButton = document.getElementById('submit'); 
+let submitButton = document.getElementById('formSubmit'); 
 submitButton.addEventListener("click", handleFormSubmit);
 
 
@@ -60,11 +60,13 @@ function validateForm(){
     window.open(`mailto:mort120c@basyd.dk?subject=${subject}&body=${body}`);
 }
 
+/*
 // Dropdown function. Shows the selected item.
 $(".dropdown-menu li a").click(function(){
     $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
     $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
   });
+  */
 
 
  var upload = document.getElementById("files");

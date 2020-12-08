@@ -14,7 +14,7 @@
                     // TODO
                     console.log(`${incident.name}`);
                     debugger;
-                   reports.push(new Report(incident.name, incident.phone, incident.subject, incident.malfunction, "Ikke påbegyndt", "25-08-2019", "13:48", "", incident.location));
+                   reports.push(new Report(incident.name, incident.phone, incident.subject, incident.malfunction, "Ikke påbegyndt", incident.datestamp, incident.timestamp, "", incident.location));
                    // reports.push(new Report("Morten", "22358794", "Telt revnet", "Stor revne i bunden af teltet", "Færdiggjort", "25-08-2019", "13:48", "", "Plads 1"));
                    console.log(reports);
                 }

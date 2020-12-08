@@ -11,47 +11,6 @@
     <script src="./handleForm.js" type="module"></script>
     <!-- Send report to Niels' php-->
     <script src='./newQ.js'></script>
-    <script>
-      const manipulateForm = function (e) {
-          e.preventDefault();
-          // læs m ajax
-          let oReq = new XMLHttpRequest();
-          oReq.addEventListener("load", function () {
-              let hentet = [];
-              if (this.responseText.length > 0)
-                  hentet = JSON.parse(this.responseText); // get and objectify
-              // udvid array m indtastet
-              debugger;
-              let n = $('name').value;
-              let p = $('phone').value;
-              let t = $('timestamp').value;
-              let s = $('subject').value;
-              let l = $('location').value;
-              let m = $('malfunction').value;
-
-              let o = {
-                  name: n,
-                  phone: p,
-                  timestamp: t,
-                  subject: s, 
-                  location: l,
-                  malfunction: m
-
-              };
-              hentet.push(o);                             // add new
-              $('json').value = JSON.stringify(hentet);   // stringify
-              document.forms['reportForm'].submit();          // send
-
-          });
-          oReq.open("GET", "http://www.dkexit.eu/tf/getIncidents.php");
-          oReq.send();
-      };
-      const doThis = function () {
-          headAndShoulders('ExamProject Dec 2020');
-          feet(2020);
-      };
-      window.addEventListener('load', doThis);
-  </script>
 
   </head>
 
@@ -61,7 +20,7 @@
         <a href="./index.html"><img id="indexLogo" src="./img/toenderFestival.svg" alt="homeLogo"></a>
         <hr>
       </div>
-      <form class="report_Form" id="reportForm" name="reportForm" onsubmit="manipulateForm()" action="http://www.dkexit.eu/tf/receiveAndStore.php"  method="POST">
+      <form class="report_Form" id="reportForm" name="reportForm"  action="http://www.dkexit.eu/tf/receiveAndStore.php"  method="POST">
         <div id="reportDiv">
 
           <h1 class="headline">Meld fejl</h1>
@@ -69,8 +28,7 @@
 
           <input class="report_Form" type="text" placeholder="Telefonnummer" name="phone" id="phone" required>
           <input id='json' name='json' type='hidden' value='' readonly/>
-         
-          <input class="report_Form" type="text" name="timestamp" id="timestamp" hidden="true"></input>
+        
           <hr>
 
           <input class="report_Form" type="text" placeholder="Indtast emne" name="subject" id="subject" required>

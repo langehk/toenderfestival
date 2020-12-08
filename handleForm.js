@@ -2,80 +2,55 @@
 
 import {getLocation} from './getLocation.js';
 
-/*
 
-function prettyBody(formElements){
+const manipulateForm = function (e) {
+  e.preventDefault();
+  // læs m ajax
+  let oReq = new XMLHttpRequest();
+  oReq.addEventListener("load", function () {
+      let hentet = [];
+      if (this.responseText.length > 0)
+          hentet = JSON.parse(this.responseText); // get and objectify
+      // udvid array m indtastet
+      debugger;
+      let n = $('name').value;
+      let p = $('phone').value;
+      let t = new Date().getHours()+":" + new Date().getMinutes(); //$('timestamp').value;
+      let d = new Date().getDate() + "-" + new Date().getMonth() + "-" + new Date().getFullYear();
+      let s = $('subject').value;
+      let l = $('location').value;
+      let m = $('malfunction').value;
 
-    let text = ""; 
+      let o = {
+          name: n,
+          phone: p,
+          timestamp: t,
+          datestamp: d,
+          subject: s, 
+          location: l,
+          malfunction: m
 
-    for (let i = 1; i < formElements.length; i++) {
-        //insert headline
-        text += formElements[i].value;
-        //text += document.write('<br>');
-    }
-    return text; 
-}*/
+      };
+      hentet.push(o);                             // add new
+      $('json').value = JSON.stringify(hentet);   // stringify
+      document.forms['reportForm'].submit();      // send
 
-
-/*
-// Gets the elements (input (form)), and gets the values from each element.
-// Then returns the desired values. as an object.
-const formToJSON = function(form) {
-  let data = {};
-  for (let i = 0; i < form.length; i++) {
-    let item = form[i];
-    data[item.name] = item.value;
-  }
-  return data;
-}*/
-
-
-const handleFormSubmit = function(event) {
-  /*const form = document.getElementsByClassName('report_Form')[0]; // Henter alle "inputs" fra vores form.
-  //event.preventDefault();
-
-  // Sætter en dato.
-  document.getElementById("timestamp").value = Date();
-  const data = formToJSON(form.elements); // Converts values to json object.
-
-
-  const dataContainer = document.getElementsByClassName('results_display')[0]; // Container to display our values. 
-
-  dataContainer.textContent = JSON.stringify(data, null, " ");*/
-
-}
-
-// Event listener on submit.
-let submitButton = document.getElementById('formSubmit'); 
-submitButton.addEventListener("click", handleFormSubmit);
-
-/*
-
-// Validation - and get values from form.
-function validateForm(){
-    let form = document.getElementById('reportForm').elements;
-    let body = prettyBody(form);
-    let subject = form["subject"].value;
-    console.log(body);
-    getLocation();
-    window.open(`mailto:mort120c@basyd.dk?subject=${subject}&body=${body}`);
-}*/
-
-/*
-// Dropdown function. Shows the selected item.
-$(".dropdown-menu li a").click(function(){
-    $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
-    $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
   });
-  */
+  oReq.open("GET", "http://www.dkexit.eu/tf/getIncidents.php");
+  oReq.send();
+};
+const doThis = function () {
+  headAndShoulders('ExamProject Dec 2020');
+  $('formSubmit').addEventListener('click', manipulateForm)
+  feet(2020);
+};
+window.addEventListener('load', doThis);
 
+ let upload = document.getElementById("files");
 
- var upload = document.getElementById("files");
-
- 
 // When files are uploaded, we select the uploaded files, and append the images.
 upload.onchange = (event) => {
-  var preview = document.getElementById('preview');
+  let preview = document.getElementById('preview');
 
   for (let i = 0; i < event.target.files.length; i++) {
     var newImage = document.createElement("img");

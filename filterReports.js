@@ -109,8 +109,9 @@ const toggleFilter = function(){
 filterButton.addEventListener('click', toggleFilter); //eventlistener på filter-knappen
 
 locationSearch.addEventListener('click', function(){
-    hideElement(statusFilter);} //Vi skjuler status baren, når man klikker på lokationen - man kan kun søge i en ting af gangen
-)
+    hideElement(statusFilter); //Vi skjuler status baren, når man klikker på lokationen - man kan kun søge i en ting af gangen
+});
+
 statusButton.addEventListener('click', toggleStatus);
 
 

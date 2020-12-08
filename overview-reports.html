@@ -50,6 +50,7 @@
     <!-- Henter data fra Niels' .php script/json fil.-->
     <script>
         const readIncidents = function () {
+            debugger;
             // læs m ajax
             let oReq = new XMLHttpRequest();
             oReq.addEventListener("load", function () {
@@ -57,7 +58,7 @@
                 if (this.responseText.length > 0)
                     incidents = JSON.parse(this.responseText); // get and objectify
                 for (incident of incidents) {
-                    console.log(`${incident.name}, ${incident.birthday}`);
+                    console.log(`${incident.name}, ${incident.phone}`);
                 }
             });
             oReq.open("GET", "http://www.dkexit.eu/tf/getIncidents.php");

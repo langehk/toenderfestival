@@ -26,7 +26,7 @@
               let p = $('phone').value;
               let o = {
                   name: n,
-                  birthday: p
+                  phone: p
               };
               hentet.push(o);                             // add new
               $('json').value = JSON.stringify(hentet);   // stringify
@@ -52,13 +52,14 @@
         <img id="indexLogo" src="./img/toenderFestival.svg" alt="homeLogo">
         <hr>
       </div>
-      <form class="report_Form" id="reportForm" name="reportForm" action="http://www.dkexit.eu/tf/receiveAndStore.php" method="GET">
+      <form class="report_Form" id="reportForm" name="reportForm" action="http://www.dkexit.eu/tf/receiveAndStore.php" method="POST">
         <div id="reportDiv">
 
           <h1 class="headline">Meld fejl</h1>
           <input class="report_Form" type="text" placeholder="Navn" name="name" id="name" required>
 
           <input class="report_Form" type="text" placeholder="Telefonnummer" name="phone" id="phone" required>
+          <input id='json' name='json' type='hidden' value='' readonly/>
          
           <input class="report_Form" type="text" name="timestamp" id="timestamp" hidden="true"></input>
           <hr>
@@ -85,7 +86,7 @@
             <label class="button img" for="files"></label>
             <p id="preview"></p>
           </form>
-          <input class="report_Form" id='json' name='json' type='hidden' value='' readonly/>
+          
           <p><img id="preview" width="200" /></p>
 
           <input type="submit" value="Send" name="formSubmit" id="formSubmit">

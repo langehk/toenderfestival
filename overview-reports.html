@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src='./lort.js' type="module"></script>
-    <script src="./overview-reports.js" type="module"></script>
+    <script src="./readAndCreateReports.js" type="module"></script>
     <script src="./filterReports.js" type="module"></script>
     <script src='./newQ.js'></script>
     <link rel="stylesheet" href="https://use.typekit.net/loa3imd.css">
@@ -16,21 +15,20 @@
 <body>
     <main>
         <div id="logo">
-            <a href="./index.html"><img id="indexLogo" src="./img/toenderFestival.svg" alt="homeLogo"></a>
+            <img id="indexLogo" src="./img/toenderFestival.svg" alt="homeLogo">
             <hr>
         </div>
 
         <input type="search" id="reports-search" name="reports-search">
 
-        <p id="filter-button" class="hideX">Filter</p>
+        <p id="filter-button">Filter</p>
         <div id="filterContainer" class="hidden">
-            <div id="statusButton">Status</div>
-            <div id="statusFilter" class="hidden">
+            <div id="statusFilter">
                 <span class="anchor">Vælg status</span>
                 <ul class="items">
-                    <li><input class="checkbox" type="checkbox" value="Færdiggjort" checked />Færdiggjort</li>
-                    <li><input class="checkbox" type="checkbox" value="Igangværende" checked />Igangværende</li>
-                    <li><input class="checkbox" type="checkbox" value="Ikke påbegyndt" checked />Ikke påbegyndt</li>
+                    <li><input class="checkbox" type="checkbox" value="Færdiggjort" checked/>Færdiggjort</li>
+                    <li><input class="checkbox" type="checkbox" value="Igangværende" checked/>Igangværende</li>
+                    <li><input class="checkbox" type="checkbox" value="Ikke påbegyndt" checked/>Ikke påbegyndt</li>
                 </ul>
             </div>
             <div id="locationFilter">
@@ -39,48 +37,15 @@
                     <option>Plads 2</option>
                     <option>Toilet</option>
                     <option>Scene 1</option>
-                    <option>Plads 105</option>
+                    <option>Plads 36</option>
                     <option>Plads 56</option>
                 </datalist>
-                <input id="locationSearch" placeholder="Søg lokation..." autoComplete="on" name="location"
-                    list="suggestions" onfocus="this.value=''" required />
+                <input id="locationSearch" placeholder="Søg lokation..." autoComplete="on" name="location" list="suggestions" onfocus="this.value=''" required />
             </div>
         </div>
 
         <div id="reports-container"></div>
     </main>
-
-    <!-- Henter data fra Niels' .php script/json fil.-->
-    <!-- <script type="module">
-        import {reports} from './overview-reports.js';
-        import {Report} from './report.js';
-
-        const readIncidents = function () {
-            // læs m ajax
-            let oReq = new XMLHttpRequest();
-            oReq.addEventListener("load", function () {
-                let incidents = [];
-                if (this.responseText.length > 0)
-                    incidents = JSON.parse(this.responseText); // get and objectify
-                for (incident of incidents) {
-                    // TODO
-                    debugger;
-                    console.log(`${incident.name}`);
-                    //reports.push(new Report(`${incident.name}, ${incident.phone}, ${incident.subject}, ${incident.malfunction}, "Ikke påbegyndt", "25-08-2019", "13:48", "", ${incident.location}}`));
-                   // reports.push(new Report("Morten", "22358794", "Telt revnet", "Stor revne i bunden af teltet", "Færdiggjort", "25-08-2019", "13:48", "", "Plads 1"));
-                }
-            });
-            oReq.open("GET", "http://www.dkexit.eu/tf/getIncidents.php");
-            oReq.send();
-        };
-        const doThis = function () {
-            headAndShoulders('ExamProject Dec 2020');
-            feet(2020);
-            readIncidents();
-        };
-        doThis();
-    </script> -->
-
     <footer id="footer">
         <div onclick="window.location.href='./index.html'">
             <img src="./img/homeStroke.svg" alt="homeFill" class="footerImg">

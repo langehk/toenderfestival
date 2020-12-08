@@ -80,6 +80,5 @@ const createReports = function (arr) {
     }
 }
 
-createReports(reports); //create all reports
 
-export {reports};
+export {reports, createReports};

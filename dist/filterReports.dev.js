@@ -7,10 +7,7 @@ var statusSearch = document.getElementsByClassName('checkbox');
 var filterButton = document.getElementById('filter-button');
 var divFilter = document.getElementById('filterContainer');
 var statusButton = document.getElementById('statusButton');
-var statusFilter = document.getElementById('statusFilter'); //let filterX = document.querySelector((`#filter-button`), ':before');
-
-var filterX = window.getComputedStyle(document.querySelector("#filter-button"), ':before').getPropertyValue('display');
-console.log(filterX);
+var statusFilter = document.getElementById('statusFilter');
 
 var filterQueryLocation = function filterQueryLocation(arr) {
   var filterLocation = document.getElementById('locationSearch').value;
@@ -55,6 +52,10 @@ var filterQueryStatus = function filterQueryStatus(arr) {
   }
 };
 
+var hideElement = function hideElement(element) {
+  element.setAttribute("class", "hidden");
+};
+
 locationSearch.addEventListener('change', function () {
   filterQueryLocation(_overviewReports.reports);
 });
@@ -86,4 +87,8 @@ var toggleFilter = function toggleFilter() {
 
 filterButton.addEventListener('click', toggleFilter); //eventlistener på filter-knappen
 
+locationSearch.addEventListener('click', function () {
+  hideElement(statusFilter);
+} //Vi skjuler status baren, når man klikker på lokationen - man kan kun søge i en ting af gangen
+);
 statusButton.addEventListener('click', toggleStatus);

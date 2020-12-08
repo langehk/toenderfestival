@@ -12,13 +12,6 @@ let statusButton = document.getElementById('statusButton');
 let statusFilter = document.getElementById('statusFilter');
 
 
-//let filterX = document.querySelector((`#filter-button`), ':before');
-
-
-let filterX = window.getComputedStyle(document.querySelector(`#filter-button`), ':before').getPropertyValue('display');
-console.log(filterX);
-
-
 
 const filterQueryLocation = function (arr) {
 
@@ -68,6 +61,10 @@ const filterQueryStatus = function(arr){
 
 }
 
+let hideElement = function(element) {
+    element.setAttribute("class", "hidden");
+}
+
 locationSearch.addEventListener('change', function(){
     filterQueryLocation(reports);
 });
@@ -111,6 +108,9 @@ const toggleFilter = function(){
 
 filterButton.addEventListener('click', toggleFilter); //eventlistener på filter-knappen
 
+locationSearch.addEventListener('click', function(){
+    hideElement(statusFilter);} //Vi skjuler status baren, når man klikker på lokationen - man kan kun søge i en ting af gangen
+)
 statusButton.addEventListener('click', toggleStatus);
 
 

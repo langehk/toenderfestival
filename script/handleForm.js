@@ -15,13 +15,13 @@ const manipulateForm = function (e) {
       debugger;
       let n = $('name').value;
       let p = $('phone').value;
-      let t = new Date().getHours()+":" + new Date().getMinutes(); //$('timestamp').value;
-      let d = new Date().getDate() + "-" + new Date().getMonth() + "-" + new Date().getFullYear();
+      let t = ("0" + new Date().getHours()).slice(-2) + ":" + ("0" + new Date().getMinutes()).slice(-2); //$('timestamp').value;
+      let d = ("0" + new Date().getDate()).slice(-2) + "-" + ("0" + new Date().getMonth()).slice(-2) + "-" + new Date().getFullYear();
       let s = $('subject').value;
       let l = $('location').value;
       let m = $('malfunction').value;
 
-      ('0'+currentMinutes).slice(-2)
+      //('0'+currentMinutes).slice(-2)
 
       let o = {
           name: n,

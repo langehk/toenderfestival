@@ -21,8 +21,6 @@ const manipulateForm = function (e) {
       let l = $('location').value;
       let m = $('malfunction').value;
 
-      //('0'+currentMinutes).slice(-2)
-
       let o = {
           name: n,
           phone: p,

@@ -326,6 +326,7 @@ hr {
   background-color: white;
   border-radius: 7px;
   padding: 15px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
 }
 
 #reports-container div h2 {
@@ -349,27 +350,28 @@ hr {
 }
 
 #reports-container div h3 {
+  margin-top: 10px;
   font-weight: 500;
-  margin-bottom: -5px;
 }
 
-#reports-container div h2, h3, p {
+#reports-container div h3, p {
   font-size: 20px;
   text-align: left;
 }
 
 #reports-container p {
-  margin-bottom: 10px;
   margin: 0;
+  margin-top: -5px;
 }
 
 #reports-container div div {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   padding: 0;
   width: 100%;
-  background-color: none;
+  background-color: transparent;
   display: flex;
   flex-direction: row;
+  box-shadow: none;
 }
 
 #reports-container div div p {

@@ -17,108 +17,26 @@ let searchInput = document.getElementById('reports-search');
 
 function searchReportFunc(){
 
-    var result = reports.findIndex(function(report, index) {
-        debugger;
-        let pisSearch = document.getElementById('reports-search').value;
-        var matches = [], i, key; //key = variabelnavnet i hvert object. Fx id eller subject 
-
-        /*
-        if(report.subject.includes(pisSearch))
-            console.log(report.subject + " is equal " + " Telt revnet");
-            return true;
-        */
-
-        for( i = 0; i < reports.length; i++ ){
-            for( key in reports[i] ){
-            
-                if(reports[i].hasOwnProperty(key) && reports[i][key].includes(pisSearch) == true )
-                
-                    matches.push( reports[i] );  // <-- This can be changed to anything,
-            }
-        }
-
-        return matches;
-});
-// On success __FOUND will contain the index of the element
-// On failure it will contain -1
-console.log(result); // 2
-
-}
-
-
-
-
-/*
-
-// Test
-function searchReports(arr, s){
- 
-    var matches = [], i, key;  //key = variabelnavnet i hvert object. Fx id eller subject 
-    for( i = arr.length; i--; )
-        for( key in arr[i] )
-            if( arr[i].hasOwnProperty(key) && arr[i][key].indexOf(s) > -1 ) //if arr[i] har en property der hedder key - søger igennem objektet
-                matches.push( arr[i] );  // <-- This can be changed to anything
-
-    return matches;
-    
-};
-
-var result = searchReports(reports, "searchInput"); 
-*/
-
-function searchReport(arr, s){
-    var matches = [], i, key; //key = variabelnavnet i hvert object. Fx id eller subject 
-    
-    for( i = 0; i < arr.length; i++ )
-        for( key in arr[i] )
-        
-            if(arr[i].hasOwnProperty(key) && arr[i][key].indexOf(s) != -1 )
-            
-                matches.push( arr[i] );  // <-- This can be changed to anything
-
-    return matches;
-};
-
-function doSearch(){
+    //var result = reports.findIndex(function(report, index) {
     debugger;
-let searchField = document.getElementById('reports-search').value; 
+    let searchValue = document.getElementById('reports-search').value;
+    var matches = [], i, key; //key = variabelnavnet i hvert object. Fx id eller subject 
 
-var result = searchReport(reports, searchField);
-console.log(result);
-}
-
-
-
-
-/*
-const searchReports = function (arr) {
-
-//Constructor: name, phone, subject, description, status, date, time, notes, location
-
-    let results = [];
-
-    let toSearch = "telt";
-
-    for(var i=0; i<reports.length; i++) {
-        for(let key in reports[i]) {
-            if(reports[i][key].indexOf(toSearch)!=-1) {
-                results.push(reports[i]);
+    for( i = 0; i < reports.length; i++ ){
+        for( key in reports[i] ){
+            
+            if(reports[i][key] != null)
+            {
+                if(reports[i].hasOwnProperty(key) && reports[i][key].includes(searchValue) == true ) //Den dør hvis der er noget, der er undefined
+            
+                matches.push( reports[i] );  // <-- This can be changed to anything,
             }
         }
+            
     }
-
-    console.log(results);
+    console.log(matches);
+    return matches;
 }
-*/
-
-/*
-    for (let i = 0; i < arr.length; i++){
-        let divShow = document.getElementById(arr[i].id);
-        let n = arr[i].subject.search(searchValue); //hvis n er -1 findes det IKKE, hvis n er 0 findes det
-        n = arr[i].text.search(searchValue);
-        console.log(n);
-    }
-}*/
 
 const filterQueryLocation = function (arr) {
 
@@ -137,9 +55,6 @@ const filterQueryLocation = function (arr) {
 }
 
 const filterQueryStatus = function(arr){
-
-    //let filterStatus = document.getElementsByClassName('items').value;
-    //console.log(filterStatus);
 
     var inputElements = document.getElementsByClassName('checkbox');
     debugger;
@@ -212,10 +127,7 @@ statusButton.addEventListener('click', function(){
     toggleVisibility(statusFilter);
 });
 
-
-
 searchInput.addEventListener('search', function() {
-
     searchReportFunc();
 });
 

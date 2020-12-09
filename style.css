@@ -37,6 +37,10 @@ ul {
   padding: 0;
 }
 
+#guideContainer div h1, h2, h3, p{
+  text-align: center;
+}
+
 button {
   font-family: futura-pt-condensed, sans-serif;
   font-weight: 500;
@@ -224,6 +228,10 @@ margin: 0 auto;
   background-color: #DD7842;
   border-radius: 7px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
+}
+
+.headline {
+  text-align: center;
 }
 
 .button.img::after {

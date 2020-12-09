@@ -18,13 +18,15 @@ const createReports = function (arr) {
         subject.innerHTML = arr[i].subject; //subject value from object
         reportDiv.appendChild(subject); //append to div element
 
+        let dateTimeDiv = document.createElement("div")
         let date = document.createElement("p");
         date.innerHTML = arr[i].date;
-        reportDiv.appendChild(date);
+        dateTimeDiv.appendChild(date);
 
         let time = document.createElement("p");
         time.innerHTML = arr[i].time;
-        reportDiv.appendChild(time);
+        dateTimeDiv.appendChild(time);
+        reportDiv.appendChild(dateTimeDiv); // puts date and time in a shared div
 
         let headlineDescription = document.createElement("h3"); //we need a headline 
         headlineDescription.innerHTML = headlines.description; //get headline from our headline-array

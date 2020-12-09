@@ -1,6 +1,5 @@
 'use strict';
 
-import { captureRejectionSymbol } from 'events';
 import {reports} from './overview-reports.js';
 import {toggleVisibility} from './sharedFunctions.js';
 
@@ -16,23 +15,79 @@ let statusFilter = document.getElementById('statusFilter');
 let searchInput = document.getElementById('reports-search'); 
 
 
+function searchReportFunc(){
+
+    var result = reports.findIndex(function(report, index) {
+        debugger;
+        let pisSearch = document.getElementById('reports-search').value;
+        var matches = [], i, key; //key = variabelnavnet i hvert object. Fx id eller subject 
+
+        /*
+        if(report.subject.includes(pisSearch))
+            console.log(report.subject + " is equal " + " Telt revnet");
+            return true;
+        */
+
+        for( i = 0; i < reports.length; i++ ){
+            for( key in reports[i] ){
+            
+                if(reports[i].hasOwnProperty(key) && reports[i][key].includes(pisSearch) == true )
+                
+                    matches.push( reports[i] );  // <-- This can be changed to anything,
+            }
+        }
+
+        return matches;
+});
+// On success __FOUND will contain the index of the element
+// On failure it will contain -1
+console.log(result); // 2
+
+}
+
+
+
+
+/*
 
 // Test
-function searchTest(arr, s){
-    debugger;
-    var matches = [], i, key;
-    
+function searchReports(arr, s){
+ 
+    var matches = [], i, key;  //key = variabelnavnet i hvert object. Fx id eller subject 
     for( i = arr.length; i--; )
         for( key in arr[i] )
-            if( arr[i].hasOwnProperty(key) && arr[i][key].indexOf(s) > -1 )
+            if( arr[i].hasOwnProperty(key) && arr[i][key].indexOf(s) > -1 ) //if arr[i] har en property der hedder key - søger igennem objektet
+                matches.push( arr[i] );  // <-- This can be changed to anything
+
+    return matches;
+    
+};
+
+var result = searchReports(reports, "searchInput"); 
+*/
+
+function searchReport(arr, s){
+    var matches = [], i, key; //key = variabelnavnet i hvert object. Fx id eller subject 
+    
+    for( i = 0; i < arr.length; i++ )
+        for( key in arr[i] )
+        
+            if(arr[i].hasOwnProperty(key) && arr[i][key].indexOf(s) != -1 )
+            
                 matches.push( arr[i] );  // <-- This can be changed to anything
 
     return matches;
 };
 
-var result = searchTest(reports, 'Telt');
+function doSearch(){
+    debugger;
+let searchField = document.getElementById('reports-search').value; 
 
+var result = searchReport(reports, searchField);
 console.log(result);
+}
+
+
 
 
 /*
@@ -157,8 +212,11 @@ statusButton.addEventListener('click', function(){
     toggleVisibility(statusFilter);
 });
 
+
+
 searchInput.addEventListener('search', function() {
-    searchReports(reports);
+
+    searchReportFunc();
 });
 
 

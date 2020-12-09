@@ -76,8 +76,6 @@ const createReports = function (arr) {
         location.innerHTML = arr[i].location;
         reportDiv.appendChild(location);
 
-        reportDiv.appendChild(document.createElement("hr"));
-
         container.appendChild(reportDiv);
     }
 }

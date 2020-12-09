@@ -1,6 +1,7 @@
 'use strict';
 
 import {reports} from './overview-reports.js';
+import {toggleVisibility} from './sharedFunctions.js';
 
 let locationSearch = document.getElementById('locationSearch');
 let statusSearch = document.getElementsByClassName('checkbox');
@@ -61,13 +62,16 @@ const filterQueryStatus = function(arr){
 
 }
 
-let hideElement = function(element) {
+let hideElement = function(element) { //funktion til at sætte class hidden på et element
     element.setAttribute("class", "hidden");
 }
 
-locationSearch.addEventListener('change', function(){
+
+locationSearch.addEventListener('change', function(){ //eventlistener på lokation - kalder søgefunktionen
     filterQueryLocation(reports);
 });
+
+
 
 for (let i = 0; i < statusSearch.length; i++) { //eventlistener på alle checkboxes
 
@@ -77,30 +81,17 @@ for (let i = 0; i < statusSearch.length; i++) { //eventlistener på alle checkbo
     
 };
 
-
-const toggleVisibility = function(element){
-    if (element.className == 'hidden') {
-
-        element.setAttribute("class", "visible");
-    }
-    else {
-
-        element.setAttribute("class", "hidden");
-        
-    }
-};
-
-const toggleFilter = function(){
+const toggleFilter = function(){ //toggle synlighed på filter 
 
     if (divFilter.className == 'hidden') {
 
         divFilter.setAttribute("class", "visible");
-        filterButton.setAttribute("class", "showX");
+        filterButton.setAttribute("class", "showX"); //viser krydset
     }
     else {
 
         divFilter.setAttribute("class", "hidden");
-        filterButton.setAttribute("class", "hideX");
+        filterButton.setAttribute("class", "hideX"); //skjuler krydset
         
     }
 

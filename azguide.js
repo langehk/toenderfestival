@@ -1,4 +1,4 @@
-import {toggleVisibility} from './filterReports.js';
+import {toggleVisibility} from './sharedFunctions.js';
 
 let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "Æ", "Ø", "Å"];
 
@@ -20,12 +20,15 @@ let guideArray = [
     ["B",
         new azguide( "Boverskrift", "Lorem ipsum"), 
         new azguide( "Bøøøh", "Lorem ipsum"), 
-        new azguide( "Bonusordning", "Lorem ipsum") 
+        new azguide( "Bonusordning", "Lorem ipsum"),
+        new azguide( "Bander", "De skyder dig")  
     ],
     ["C",
         new azguide("Cool", "Lorem ipsum"), 
         new azguide("Can", "Lorem ipsum"), 
-        new azguide("Cisco", "Lorem ipsum") 
+        new azguide("Cisco", "Lorem ipsum"),
+        new azguide("Cat in sæk", "The julekalender"), 
+        new azguide("Casino", "Brug alle dine penge") 
     ],
     ["D",
         new azguide("Danse", "Lorem ipsum"), 
@@ -56,7 +59,6 @@ const buildGuide = function(){
 
         let divGuide = document.createElement('div');
         divGuide.setAttribute('class', 'hidden');
-        divGuide.setAttribute('class', 'divGuide');
 
         letter.addEventListener('click', function(){
             toggleVisibility(divGuide);

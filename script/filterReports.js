@@ -1,5 +1,6 @@
 'use strict';
 
+import { captureRejectionSymbol } from 'events';
 import {reports} from './overview-reports.js';
 import {toggleVisibility} from './sharedFunctions.js';
 
@@ -12,7 +13,57 @@ let divFilter = document.getElementById('filterContainer');
 let statusButton = document.getElementById('statusButton');
 let statusFilter = document.getElementById('statusFilter');
 
+let searchInput = document.getElementById('reports-search'); 
 
+
+
+// Test
+function searchTest(arr, s){
+    debugger;
+    var matches = [], i, key;
+    
+    for( i = arr.length; i--; )
+        for( key in arr[i] )
+            if( arr[i].hasOwnProperty(key) && arr[i][key].indexOf(s) > -1 )
+                matches.push( arr[i] );  // <-- This can be changed to anything
+
+    return matches;
+};
+
+var result = searchTest(reports, 'Telt');
+
+console.log(result);
+
+
+/*
+const searchReports = function (arr) {
+
+//Constructor: name, phone, subject, description, status, date, time, notes, location
+
+    let results = [];
+
+    let toSearch = "telt";
+
+    for(var i=0; i<reports.length; i++) {
+        for(let key in reports[i]) {
+            if(reports[i][key].indexOf(toSearch)!=-1) {
+                results.push(reports[i]);
+            }
+        }
+    }
+
+    console.log(results);
+}
+*/
+
+/*
+    for (let i = 0; i < arr.length; i++){
+        let divShow = document.getElementById(arr[i].id);
+        let n = arr[i].subject.search(searchValue); //hvis n er -1 findes det IKKE, hvis n er 0 findes det
+        n = arr[i].text.search(searchValue);
+        console.log(n);
+    }
+}*/
 
 const filterQueryLocation = function (arr) {
 
@@ -59,7 +110,6 @@ const filterQueryStatus = function(arr){
             divShow.style.display = "";             
         }
     }
-
 }
 
 let hideElement = function(element) { //funktion til at sætte class hidden på et element
@@ -107,7 +157,9 @@ statusButton.addEventListener('click', function(){
     toggleVisibility(statusFilter);
 });
 
-export {toggleVisibility};
+searchInput.addEventListener('search', function() {
+    searchReports(reports);
+});
 
 
 

@@ -14,7 +14,7 @@ const createReports = function (arr) {
 
         let reportDiv = document.createElement("div"); //div element for every report
         reportDiv.id = arr[i].id;
-        let subject = document.createElement("p"); //create p element
+        let subject = document.createElement("h2"); //create p element
         subject.innerHTML = arr[i].subject; //subject value from object
         reportDiv.appendChild(subject); //append to div element
 

@@ -11,7 +11,7 @@ app.options("*", cors()); // Allow all origin *
 
 app.set("port", process.env.PORT || 8081);
 app.use(sphp.express('./'));
-app.use(express.static(__dirname + "/"));
+app.use(express.static('./'));
 
 app.get("/", function (req, res) {
   res.send("Hello World!");

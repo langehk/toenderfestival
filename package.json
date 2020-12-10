@@ -4,13 +4,14 @@
   "main": "hello.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "pretest": "npm install",
     "start": "node hello.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/langehk/toenderfestival.git"
   },
-  "author": "",
+  "author": "Morten Morten Nadia",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/langehk/toenderfestival/issues"
@@ -20,7 +21,8 @@
     "@popperjs/core": "^2.5.4",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "node": "^15.2.1"
+    "node": "^15.2.1",
+    "sphp": "^0.6.3"
   },
   "devDependencies": {},
   "description": ""

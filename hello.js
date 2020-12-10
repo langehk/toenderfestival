@@ -1,12 +1,16 @@
+'use strict';
+
 var express = require("express");
 var app = express();
 var cors = require("cors");
+var sphp = require('sphp');
 
 
 app.use(cors({ credentials: true, origin: true }));
 app.options("*", cors()); // Allow all origin *
 
 app.set("port", process.env.PORT || 8081);
+app.use(sphp.express('./'));
 app.use(express.static(__dirname + "/"));
 
 app.get("/", function (req, res) {

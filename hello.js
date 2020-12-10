@@ -7,7 +7,7 @@ var sphp = require('sphp');
 
 var app = express();
 
-var server = app.listen(8081);
+app.set("port", process.env.PORT || 8081);
 
 app.use(sphp.express('./'));
 app.use(express.static('./'));

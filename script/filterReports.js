@@ -14,31 +14,35 @@ let statusFilter = document.getElementById('statusFilter');
 
 let searchInput = document.getElementById('reports-search'); 
 
+function searchReportFunc(arr){ //Søgefunktion der leder i alt indhold i objekterne. arr = array med objekter
 
-function searchReportFunc(){
+    let searchValue = document.getElementById('reports-search').value; //søgeord
+    let matches = [], i, key; //key = variabelnavnet i hvert object. Fx id eller subject 
 
-    //var result = reports.findIndex(function(report, index) {
-    debugger;
-    let searchValue = document.getElementById('reports-search').value;
-    var matches = [], i, key; //key = variabelnavnet i hvert object. Fx id eller subject 
+    for( i = 0; i < arr.length; i++ ){ //loop igennem vores array med objekter
 
-    for( i = 0; i < reports.length; i++ ){
-        for( key in reports[i] ){
+        let divHide = document.getElementById(arr[i].id); 
+        divHide.style.display = "none"; //skjuler alle elementer 
+
+        for( key in arr[i] ){ //for hver objekt property
             
-            if(reports[i][key] != null)
+            if(arr[i][key] != null) //Så den ikke dør, hvis der er et felt, der er undefined
             {
-                if(reports[i].hasOwnProperty(key) && reports[i][key].includes(searchValue) == true ) //Den dør hvis der er noget, der er undefined
+                if(arr[i].hasOwnProperty(key) && arr[i][key].includes(searchValue) == true ) //hvis objektet har property og søgeordet er i den property
             
-                matches.push( reports[i] );  // <-- This can be changed to anything,
+                matches.push( arr[i] );  //Skubber matches ind i et nyt array, vi viser bagefter
             }
         }
-            
+    }
+
+    for (let r = 0; r < matches.length; r++) { //loop til at vise vores matches
+        let divShow = document.getElementById(matches[r].id);
+        divShow.style.display = ""; //viser vores matches             
     }
     console.log(matches);
-    return matches;
 }
 
-const filterQueryLocation = function (arr) {
+const filterQueryLocation = function (arr) { //Filter-funktion til lokation (dropdown)
 
     let filterLocation = document.getElementById('locationSearch').value;
 
@@ -54,7 +58,7 @@ const filterQueryLocation = function (arr) {
     }
 }
 
-const filterQueryStatus = function(arr){
+const filterQueryStatus = function(arr){ //filter-funktion til status (checkboxes)
 
     var inputElements = document.getElementsByClassName('checkbox');
     debugger;
@@ -86,27 +90,17 @@ let hideElement = function(element) { //funktion til at sætte class hidden på 
     element.setAttribute("class", "hidden");
 }
 
-
-locationSearch.addEventListener('change', function(){ //eventlistener på lokation - kalder søgefunktionen
-    filterQueryLocation(reports);
-});
-
-
-
-for (let i = 0; i < statusSearch.length; i++) { //eventlistener på alle checkboxes
-
-    statusSearch[i].addEventListener('click', function(){
-        filterQueryStatus(reports);
-    });
-    
-};
-
 const toggleFilter = function(){ //toggle synlighed på filter 
 
     if (divFilter.className == 'hidden') {
 
         divFilter.setAttribute("class", "visible");
         filterButton.setAttribute("class", "showX"); //viser krydset
+        searchInput.value = ""; //Søgefeltet bliver tomt igen - søgefunktionerne virker ikke sammen
+        for (let r = 0; r < reports.length; r++) { //Vi nulstiller og viser alle reports, når man klikke på filter - fordi søgefunktionerne ikke virker sammen
+            let divShow = document.getElementById(reports[r].id); 
+            divShow.style.display = "";             
+        }
     }
     else {
 
@@ -115,6 +109,21 @@ const toggleFilter = function(){ //toggle synlighed på filter
         
     }
 
+};
+
+
+//EVENTLISTENERS
+
+locationSearch.addEventListener('change', function(){ //eventlistener på lokation - kalder søgefunktionen
+    filterQueryLocation(reports);
+});
+
+for (let i = 0; i < statusSearch.length; i++) { //eventlistener på alle checkboxes
+
+    statusSearch[i].addEventListener('click', function(){
+        filterQueryStatus(reports);
+    });
+    
 };
 
 filterButton.addEventListener('click', toggleFilter); //eventlistener på filter-knappen
@@ -128,7 +137,7 @@ statusButton.addEventListener('click', function(){
 });
 
 searchInput.addEventListener('search', function() {
-    searchReportFunc();
+    searchReportFunc(reports);
 });
 
 

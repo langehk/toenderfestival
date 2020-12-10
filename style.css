@@ -312,8 +312,34 @@ hr {
   margin-top: 0;
 }
 
-#statusButton {
+#overviewMain {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#statusButton, #locationSearch {
+  font-family: futura-pt-condensed, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  height: 40px;
+  font-size: 35px;
   width: 300px;
+  background-color: #041B36;
+  color: white;
+}
+
+#locationSearch select, textarea {
+  font-family: futura-pt-condensed, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: white;
+}
+
+#locationSearch::placeholder {
+  color: white;
 }
 
 #reports-container {

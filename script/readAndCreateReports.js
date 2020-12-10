@@ -15,7 +15,7 @@
                 }
                 createReports(reports); //create all reports
             });
-            oReq.open("GET", "http://www.dkexit.eu/tf/getIncidents.php");
+            oReq.open("GET", "./php/getIncidents.php");
             oReq.send();
         };
         const doThis = function () {

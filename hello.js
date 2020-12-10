@@ -1,21 +1,6 @@
-'use strict';
-/*
- * https://stackoverflow.com/questions/6542169/execute-php-scripts-within-node-js-web-server
- */
-
-var express = require('express');
-var sphp = require('sphp');
-
-var app = express();
-var server = app.listen(8080);
-
-app.use(sphp.express('./'));
-app.use(express.static('./'));
-
-console.log("Server listening!"); 
 
 
-/*var express = require("express");
+var express = require("express");
 var app = express();
 var cors = require("cors");
 
@@ -32,4 +17,4 @@ app.get("/", function (req, res) {
 
 app.listen(app.get("port"), function () {
   console.log("Node app is running at localhost:" + app.get("port"));
-});*/
+});

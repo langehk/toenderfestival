@@ -1,16 +1,23 @@
 'use strict';
 
 var express = require("express");
-var app = express();
 var cors = require("cors");
+var sphp = require('sphp');
 
 
+var app = express();
 
+var server = app.listen(8081);
+
+app.use(sphp.express('./'));
+app.use(express.static('./'));
+
+/*
 app.use(cors({ credentials: true, origin: true }));
 app.options("*", cors()); // Allow all origin *
 
 app.set("port", process.env.PORT || 8081);
-
+app.use(sphp.express('./'));
 app.use(express.static('./'));
 
 app.get("/", function (req, res) {
@@ -19,4 +26,4 @@ app.get("/", function (req, res) {
 
 app.listen(app.get("port"), function () {
   console.log("Node app is running at localhost:" + app.get("port"));
-});
+});*/

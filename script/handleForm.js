@@ -12,7 +12,6 @@ const manipulateForm = function (e) {
       if (this.responseText.length > 0)
           hentet = JSON.parse(this.responseText); // get and objectify
       // udvid array m indtastet
-      debugger;
       let n = $('name').value;
       let p = $('phone').value;
       let t = ("0" + new Date().getHours()).slice(-2) + ":" + ("0" + new Date().getMinutes()).slice(-2); //$('timestamp').value;

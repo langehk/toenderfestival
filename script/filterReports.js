@@ -61,7 +61,6 @@ const filterQueryLocation = function (arr) { //Filter-funktion til lokation (dro
 const filterQueryStatus = function(arr){ //filter-funktion til status (checkboxes)
 
     var inputElements = document.getElementsByClassName('checkbox');
-    debugger;
     let chosenReports = [];
 
     for (let i = 0; i < inputElements.length; i++) { //For-loop gennem checkboxes

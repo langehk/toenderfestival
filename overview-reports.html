@@ -19,33 +19,35 @@
             <hr>
         </div>
 
-        <div id="full filter">
-        <input type="search" id="reports-search" name="reports-search">
-
-        <p id="filter-button">Filter</p>
-        <div id="filterContainer" class="hidden">
-            <div id="statusButton">Status</div>
-            <div id="statusFilter" class="hidden">
-                <span class="anchor">Vælg status</span>
-                <ul class="items">
-                    <li><input class="checkbox" type="checkbox" value="Færdiggjort" checked/>Færdiggjort</li>
-                    <li><input class="checkbox" type="checkbox" value="Igangværende" checked/>Igangværende</li>
-                    <li><input class="checkbox" type="checkbox" value="Ikke påbegyndt" checked/>Ikke påbegyndt</li>
-                </ul>
+        <div id="fullFilter">
+            <h1>Fejlmeldinger</h1>
+            <input type="search" id="reports-search" name="reports-search" placeholder="Søg...">
+            <div id="filterButtonBox">
+                <p id="filter-button">Filter</p>
             </div>
-            <div id="locationFilter">
-                <datalist class="report_Form" id="suggestions">
-                    <option>Plads 1</option>
-                    <option>Plads 2</option>
-                    <option>Toilet</option>
-                    <option>Scene 1</option>
-                    <option>Plads 36</option>
-                    <option>Plads 56</option>
-                </datalist>
-                <input id="locationSearch" placeholder="Søg lokation..." autoComplete="on" name="location" list="suggestions" onfocus="this.value=''" required />
+            <div id="filterContainer" class="hidden">
+                <div id="statusButton">Status</div>
+                <div id="statusFilter" class="hidden">
+                    <ul class="items">
+                        <li><input class="checkbox" type="checkbox" value="Færdiggjort" checked />Færdiggjort</li>
+                        <li><input class="checkbox" type="checkbox" value="Igangværende" checked />Igangværende</li>
+                        <li><input class="checkbox" type="checkbox" value="Ikke påbegyndt" checked />Ikke påbegyndt</li>
+                    </ul>
+                </div>
+                <div id="locationFilter">
+                    <datalist class="report_Form" id="suggestions">
+                        <option>Plads 1</option>
+                        <option>Plads 2</option>
+                        <option>Toilet</option>
+                        <option>Scene 1</option>
+                        <option>Plads 36</option>
+                        <option>Plads 56</option>
+                    </datalist>
+                    <input id="locationSearch" placeholder="Søg lokation..." autoComplete="on" name="location"
+                        list="suggestions" onfocus="this.value=''" required />
+                </div>
             </div>
         </div>
-    </div>
 
         <div id="reports-container"></div>
     </main>

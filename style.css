@@ -312,6 +312,10 @@ hr {
   margin-top: 0;
 }
 
+#statusButton {
+  width: 300px;
+}
+
 #reports-container {
   width: 100%;
   display: flex;

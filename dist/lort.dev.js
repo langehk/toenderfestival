@@ -45,7 +45,7 @@ var readIncidents = function readIncidents() {
 
 var doThis = function doThis() {
   headAndShoulders('ExamProject Dec 2020');
-  feet(2020);
+  //feet(2020);
   readIncidents();
 };
 

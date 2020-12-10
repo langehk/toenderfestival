@@ -20,7 +20,7 @@
         };
         const doThis = function () {
             headAndShoulders('ExamProject Dec 2020');
-            feet(2020);
+            //feet(2020);
             readIncidents();
         };
         doThis();

@@ -1,5 +1,1 @@
-[
-    {​​​​​"name":"test","birthday":"2020-12-01"}
-    ​​​​​,
-    {​​​​​"name":"Erik","birthday":"2020-12-01"}​​​​​
-]
+[{"name":"Nadia","phone":"12345678","timestamp":"09:48","datestamp":"15-11-2020","subject":"Strøm mangler","location":"Plads 36","malfunction":"Der er ingen strøm overhovedet"},{"name":"Nadia Skau","phone":"sdfds","timestamp":"09:49","datestamp":"15-11-2020","subject":"sdf","location":"Scene 1","malfunction":"dsfdsf"},{"name":"Nadia Skau","phone":"sdfds","timestamp":"09:50","datestamp":"15-11-2020","subject":"sdf","location":"Scene 1","malfunction":"dsfdsf"},{"name":"","phone":"","timestamp":"09:51","datestamp":"15-11-2020","subject":"","location":"","malfunction":""},{"name":"","phone":"gfd","timestamp":"09:56","datestamp":"15-11-2020","subject":"fds","location":"Plads 2","malfunction":"dsf"},{"name":"","phone":"dsf","timestamp":"09:57","datestamp":"15-11-2020","subject":"dsf","location":"Plads 2","malfunction":"dsf"},{"name":"","phone":"sdf","timestamp":"09:59","datestamp":"15-11-2020","subject":"dsfsfd","location":"Scene 1","malfunction":"dsf"},{"name":"","phone":"gfd","timestamp":"10:03","datestamp":"15-11-2020","subject":"sdffgd","location":"Toilet","malfunction":"gfd"}]

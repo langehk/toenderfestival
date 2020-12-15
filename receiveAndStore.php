@@ -1,3 +1,16 @@
 <?php
-file_put_contents('./data/incidents.json', $_POST['json']);
-header('Location: ' . $_SERVER['HTTP_REFERER']);
+
+
+    if (empty($_POST["name"])) {
+      echo "Name is required";
+    } /*else {
+      $name = test_input($_POST["name"]);
+    }*/
+  
+
+
+//file_put_contents('./data/incidents.json', $_POST['json']);
+//header('Location: ./confirmation.html');
+?>
+
+

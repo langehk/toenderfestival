@@ -2,6 +2,15 @@
 
 import {getLocation} from './getLocation.js';
 
+const validateForm = function(){
+  debugger;
+  var x = document.forms["reportForm"]["name"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  console.log('hej');
+}
 
 const manipulateForm = function (e) {
   e.preventDefault();

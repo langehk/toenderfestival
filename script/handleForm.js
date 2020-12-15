@@ -4,7 +4,6 @@ import {getLocation} from './getLocation.js';
 
 const manipulateForm = function (e) {
  e.preventDefault();
- debugger;
   // læs m ajax
   let oReq = new XMLHttpRequest();
   oReq.addEventListener("load", function () {

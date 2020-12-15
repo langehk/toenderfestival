@@ -2,9 +2,9 @@
 
 import {getLocation} from './getLocation.js';
 
-
 const manipulateForm = function (e) {
-  e.preventDefault();
+ e.preventDefault();
+ debugger;
   // læs m ajax
   let oReq = new XMLHttpRequest();
   oReq.addEventListener("load", function () {
@@ -38,11 +38,13 @@ const manipulateForm = function (e) {
   oReq.open("GET", "./getIncidents.php");
   oReq.send();
 };
+
 const doThis = function () {
   headAndShoulders('ExamProject Dec 2020');
-  $('formSubmit').addEventListener('click', manipulateForm)
+ $('formSubmit').addEventListener('click', manipulateForm)
   //feet(2020);
 };
+
 window.addEventListener('load', doThis);
 
  let upload = document.getElementById("files");

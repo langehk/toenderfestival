@@ -41,7 +41,7 @@ const manipulateForm = function (e) {
 
 const doThis = function () {
   headAndShoulders('ExamProject Dec 2020');
- $('formSubmit').addEventListener('click', manipulateForm)
+ $('reportForm').addEventListener('submit', manipulateForm)
   //feet(2020);
 };
 

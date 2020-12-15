@@ -351,6 +351,20 @@ hr {
   padding-left: 16px;
 }
 
+#AZHeadline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+#AZHeadline #reports-search {
+  margin-top: 0;
+}
+
+
+
 #filterButtonBox {
   position: relative;
   width: 300px;

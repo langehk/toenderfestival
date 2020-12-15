@@ -35,7 +35,7 @@ const manipulateForm = function (e) {
       document.forms['reportForm'].submit();      // send
 
   });
-  oReq.open("GET", "http://www.dkexit.eu/tf/getIncidents.php");
+  oReq.open("GET", "./getIncidents.php");
   oReq.send();
 };
 const doThis = function () {

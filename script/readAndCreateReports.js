@@ -8,6 +8,7 @@
             let oReq = new XMLHttpRequest();
             oReq.addEventListener("load", function () {
                 let incidents = [];
+                debugger;
                 if (this.responseText.length > 0)
                     incidents = JSON.parse(this.responseText); // get and objectify
                 for (let incident of incidents) {
@@ -15,7 +16,7 @@
                 }
                 createReports(reports); //create all reports
             });
-            oReq.open("GET", "http://www.dkexit.eu/tf/getIncidents.php");
+            oReq.open("GET", "./getIncidents.php");
             oReq.send();
         };
         const doThis = function () {
